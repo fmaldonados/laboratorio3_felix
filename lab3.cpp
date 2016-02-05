@@ -74,9 +74,43 @@ int main(int argc, char* argv[]){
                                 }
 				cout<< endl;
                         }
+			cout<< endl;
+			int j_1[]= {matriz[rand()%4][0],matriz[rand()%4][1],matriz[rand()%4][2]};
+			int j_2[]= {matriz[rand()%4][0],matriz[rand()%4][1],matriz[rand()%4][2]};
 			
-		
+			cout<<"Jugador 1: ";
+			for(int i=0; i<3; i++){
+				cout<< j_1[i] << " ";
+			}
+			cout<< endl;
+			cout<<"Jugador 2: ";
+			for(int i=0; i<3; i++){
+                                cout<< j_2[i] << " ";
+                        }
+			cout<< endl;
+					
+			cout << "Jugador 1:"<< j_1[0]<<"-"<<j_2[1]<<"="<< j_1[0] - j_2[1] <<endl;
+			cout << "Jugador 2:"<< j_2[0]<<"-"<<j_1[1]<<"="<< j_2[0] - j_1[1] <<endl;
 			
+			int dif1= j_1[0] - j_2[1];
+			int dif2= j_2[0] - j_1[1];
+			
+			if(dif1 > dif2)
+				cout<< "El Jugador 1 Gano por "<< dif1 - dif2<<endl<<", no uso velocidad";
+			if(dif1<dif2)
+				cout<< "El Jugador 2 gano por "<< dif2- dif1<<endl<<", no uso velocidad";
+			if(dif1 == dif2){
+				if(j_1[2]>j_2[2]){
+					cout<<"El jugador 1 Gano por velocidad";
+				}
+				if(j_1[2]<j_2[2]){
+					cout<<"El Jugador 2 gano por velocidad";
+				}
+				if(j_1[2]==j_2[2]){
+					cout<< "Es un empate";
+				}
+			}
+
 		}else{
 			cout<< "OPCION NO VALIDA"<<endl;	
 		}
