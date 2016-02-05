@@ -30,7 +30,6 @@ int main(int argc, char* argv[]){
 			bool seguir=false;
                 	int intentos=0;
                 	numero_random =rand() % 1000 - 500;
-			cout<< numero_random<<endl;
                 	while(!seguir){
                         	intentos++;
                         	cout <<"Adivina el Numero: ";
@@ -51,8 +50,33 @@ int main(int argc, char* argv[]){
 			cin>> volver_jugar;
 		}
 	}else{
+		
 		if(opcion == 2){
-	
+			int matriz[4][3];
+			srand(time(NULL));
+			for(int i=0; i<4;i++){
+				for(int k=0; k<3;k++){
+					if(k == 0){
+						matriz[i][k]= rand()%30 + 85 ;
+					}
+					if(k == 1){
+						matriz[i][k]= rand()%25 + 50;
+					}
+					if(k == 2){
+						matriz[i][k]= rand()%50 + 150;
+					}
+				}
+			}
+			cout<< "ATAQUE\tDEFENSA\tVELOCIDAD"<< endl;
+			for(int i=0; i<4;i++){
+                                for(int k=0; k<3;k++){
+					cout<< matriz[i][k]<<"\t";
+                                }
+				cout<< endl;
+                        }
+			
+		
+			
 		}else{
 			cout<< "OPCION NO VALIDA"<<endl;	
 		}
@@ -60,6 +84,12 @@ int main(int argc, char* argv[]){
 
 	return 0;
 }
+
+
+
+
+
+
 void imprimir_score(int score []){
 	cout<< "----------------HIGH SCORE---------------------------"<<endl;
 	for(int i=0; i<10;i++){
